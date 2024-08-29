@@ -1,11 +1,21 @@
 /* eslint-disable react/jsx-no-target-blank */
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
+import Router, { useRouter } from "next/router";
 
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import Footer from "components/Footers/Footer.js";
 
 export default function Index() {
+  
+  const router = useRouter();
+  useEffect(() => {
+    // Redirige a /dashboard después de 1 segundo
+    router.push('/dashboard');
+
+
+  }, [router]);
+  
   return (
     <>
       <IndexNavbar fixed />
